@@ -9,7 +9,7 @@ export default function Users({token}) {
 
     useEffect(() => {
         const getUsers = async()=>{
-            const response = await axios.get("https://amjad-tweet-backend.herokuapp.com/users")
+            const response = await axios.get("https://twitter-tuwaiq-backend.herokuapp.com/users")
             setUsers(response.data)
         }
 

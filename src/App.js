@@ -13,15 +13,15 @@ import WelcomePage from "./component/WelcomePage";
 function App() {
   const [token, setToken] = useState("");
 
-  // useEffect(() => {
-  //   if(localStorage.getItem("token")==null){
-  //     localStorage.setItem("token", JSON.stringify(""))
-  //   }
-  //   if (!token && localStorage.getItem("token") !== null) {
-  //     const localStorageToken = JSON.parse(localStorage.getItem("token"));
-  //     setToken(localStorageToken);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if(localStorage.getItem("token")==null){
+      localStorage.setItem("token", JSON.stringify(""))
+    }
+    if (!token && localStorage.getItem("token") !== null) {
+      const localStorageToken = JSON.parse(localStorage.getItem("token"));
+      setToken(localStorageToken);
+    }
+  }, []);
 
   return (
     <div>

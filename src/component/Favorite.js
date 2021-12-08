@@ -9,7 +9,7 @@ export default function Favorite({token}) {
 
     useEffect(() => {
         const getFav = async()=>{
-            const response = await axios.get("https://amjad-tweet-backend.herokuapp.com/allFavorite",{
+            const response = await axios.get("https://twitter-tuwaiq-backend.herokuapp.com/allFavorite",{
                 headers: {
                     authorization: `Bearer ${token}`,
                   }  

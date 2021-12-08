@@ -17,20 +17,20 @@ export default function Home({token}) {
         const getDate = async()=>{
 
             try {
-                const response = await axios.get("https://amjad-tweet-backend.herokuapp.com/tweets",{
+                const response = await axios.get("https://twitter-tuwaiq-backend.herokuapp.com/tweets",{
                 })
             setTweets(response.data)
 
 
             if(token){
-                const likes= await axios.get("https://amjad-tweet-backend.herokuapp.com/allFavorite",{
+                const likes= await axios.get("https://twitter-tuwaiq-backend.herokuapp.com/allFavorite",{
                     headers: { authorization: `Bearer ${token}`  }
                     })
                 console.log(likes.data,"likes");
                 setFavList(likes.data)
                }
 
-            // const likes= await axios.get("https://amjad-tweet-backend.herokuapp.com/allFavorite",{
+            // const likes= await axios.get("https://twitter-tuwaiq-backend.herokuapp.com/allFavorite",{
             //     headers: { authorization: `Bearer ${token}`  }
             //     })
             // console.log(likes.data,"likes");
@@ -65,7 +65,7 @@ export default function Home({token}) {
 
       const addTweet=async ()=>{
         const result = await axios.post(
-          "https://amjad-tweet-backend.herokuapp.com/add-tweet",
+          "https://twitter-tuwaiq-backend.herokuapp.com/add-tweet",
           {
             text: text,
             img: img,
@@ -81,14 +81,14 @@ export default function Home({token}) {
 
 
     const deleteTweet = async(id)=>{
-        const response = await axios.delete(`https://amjad-tweet-backend.herokuapp.com/cut-one/${id}`,{
+        const response = await axios.delete(`https://twitter-tuwaiq-backend.herokuapp.com/cut-one/${id}`,{
             headers: { authorization: `Bearer ${token}`  }
         })
         setTweets(response.data)
     }
     
     const favTweet= async(tweetId)=>{
-        const response = await axios.post("https://amjad-tweet-backend.herokuapp.com/favorite",{
+        const response = await axios.post("https://twitter-tuwaiq-backend.herokuapp.com/favorite",{
             tweetId: tweetId
         },{
             headers: { authorization: `Bearer ${token}`  }
