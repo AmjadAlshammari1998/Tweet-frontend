@@ -19,7 +19,7 @@ export default function LogIn({setToken}) {
     }
 
     const logInBtn = async()=>{
-        const response = await axios.post("https://twitter-tuwaiq-backend.herokuapp.com/login",{
+        const response = await axios.post("https://amjad-tweet-backend.herokuapp.com/login",{
             account:account, password:password
         })
         if (response.status === 201){

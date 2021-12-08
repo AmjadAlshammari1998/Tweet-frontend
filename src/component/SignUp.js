@@ -29,7 +29,7 @@ export default function SignUp() {
 
   const addUser = async () => {
       
-    const response = await axios.post("https://twitter-tuwaiq-backend.herokuapp.com/signUp", {
+    const response = await axios.post("https://amjad-tweet-backend.herokuapp.com/signUp", {
         account: account,
       email: email,
       imageProfile:img,
